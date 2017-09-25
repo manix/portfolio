@@ -1,0 +1,42 @@
+{
+  "name": "Manix",
+  "version": "1.0.0",
+  "description": "SPA quickstart",
+  "scripts": {
+    "test": "mocha src/main.test.js src/**/*.test.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --hot --inline --content-base dist/ --colors --history-api-fallback --open",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luri/spa-quickstart.git"
+  },
+  "keywords": [
+    "luri",
+    "spa",
+    "quickstart"
+  ],
+  "author": "Manix <admin@manix.info>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/luri/spa-quickstart/issues"
+  },
+  "homepage": "https://github.com/luri/spa-quickstart#readme",
+  "dependencies": {
+    "luri-spa": "^2.3.0"
+  },
+  "devDependencies": {
+    "cross-env": "^5.0.5",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^0.11.2",
+    "jsdom": "^7.2.2",
+    "mocha": "^3.5.3",
+    "mocha-jsdom": "^1.1.0",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.8.2"
+  }
+}

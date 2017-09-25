@@ -1,0 +1,43 @@
+@import "../var.scss";
+
+#page-compose {
+  .table .col:last-child {
+    padding: 0;
+  }
+
+  .col > div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+  }
+
+  .col > div > div:nth-child(2):not(:empty) {
+    padding: 5px;
+    color: red;
+  }
+
+  input, textarea, button {
+    box-sizing: border-box;
+    padding: 5px 10px;
+    width: 100%;
+    flex: 1;
+    border: none;
+    color: $pcolor;
+    font-family: $ffam;
+  }
+
+  button {
+    height: 100%;
+    cursor: pointer;
+    background-color: $icolor;
+    border: solid 1px $pcolor;
+    color: $pcolor;
+  }
+
+  button:hover {
+    background-color: $pcolor;
+    color: $icolor;
+    border-color: $icolor;
+  }
+}

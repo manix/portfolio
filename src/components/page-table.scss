@@ -1,0 +1,31 @@
+.table {
+
+  .title, .col {
+    padding: 15px 25px;
+    border: solid 1px lightgray;
+  }
+
+  .title {
+    text-align: center;
+    font-weight: bold;
+    background-color: #fafafa;
+    display: block;
+   }
+
+   .row {
+     display: flex;
+     flex-wrap: wrap;
+   }
+
+   .col:first-child {
+     font-weight: bold;
+     background-color: #fafafa;
+   }
+
+   .col {
+     flex-grow: 1;
+     box-sizing: border-box;
+     width: 50%;
+     background-color: white;
+   }
+}
