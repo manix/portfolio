@@ -58,7 +58,7 @@ module.exports = class ComposePage extends StaticPage {
         html: new PageTable(new Anchor({
           class: "title",
           html: "Compose",
-          href: "/contacts"
+          href: "/me/contacts"
         }), {
           your_name: new Control(c.text("name"), false),
           your_email: new Control(c.email("email"), false),
