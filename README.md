@@ -1,16 +1,3 @@
-# spa-quickstart
-A spa quickstart with set up webpack and testing
+# My portfolio app
 
-### Getting started
-
-    git clone https://github.com/luri/spa-quickstart
-    npm install
-    npm run dev
-
-### Package
-
-    npm run build
-
-### Test
-
-    npm test
+[https://manix.info](https://manix.info)
