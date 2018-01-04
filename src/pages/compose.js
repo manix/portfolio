@@ -28,9 +28,7 @@ module.exports = class ComposePage extends StaticPage {
 
     this.on("form-xhr-response", function (xhr, form) {
       if (form.id === "page-compose") {
-        if (xhr.status !== 200) {
-          form.elements.message.controlComponent.displayError("This form is actually for demonstration purposes only, please use an alternate channel if you need to contact me. Sorry!");
-        }
+        form.elements.message.controlComponent.displayError("This form is actually for demonstration purposes only, please use an alternate channel if you need to contact me. Sorry!");
       }
     });
   }
