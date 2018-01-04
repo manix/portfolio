@@ -91,17 +91,28 @@ module.exports = class StuffDetailsPage extends DynamicPage {
     }
   }
 
-  props() {
-    let key = this.segments.stuff || "...";
-
+  staticProps() {
     return {
       id: "page-stuff-details",
       html: new PageTable(new Anchor({
         class: "title",
-        html: stuff[key] ? stuff[key].name : "...",
+        html: "...",
         href: "/me/stuff"
-      }), stuff[key] || {})
+      }), stuff["..."])
     }
+  }
+
+  dynamicProps() {
+    let key = this.segments.stuff;
+
+    return Promise.resolve({
+      id: "page-stuff-details",
+      html: new PageTable(new Anchor({
+        class: "title",
+        html: stuff[key].name,
+        href: "/me/stuff"
+      }), stuff[key])
+    });
   }
 
 }

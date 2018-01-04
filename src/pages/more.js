@@ -1,5 +1,3 @@
-require("./more.scss");
-
 module.exports = class MorePage extends require("luri-spa").StaticPage {
 
   title() {

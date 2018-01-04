@@ -1,5 +1,3 @@
-require("./compose.scss");
-
 const { Anchor, StaticPage, Form } = require("luri-spa");
 const { Control, controls: c } = require("luri-form");
 const PageTable = require("../components/page-table");
@@ -25,6 +23,18 @@ function validate(form) {
 
 module.exports = class ComposePage extends StaticPage {
 
+  constructor() {
+    super();
+
+    this.on("form-xhr-response", function (xhr, form) {
+      if (form.id === "page-compose") {
+        if (xhr.status !== 200) {
+          form.elements.message.controlComponent.displayError("This form is actually for demonstration purposes only, please use an alternate channel if you need to contact me. Sorry!");
+        }
+      }
+    });
+  }
+
   title() {
     return "Compose";
   }
@@ -49,7 +59,6 @@ module.exports = class ComposePage extends StaticPage {
 
   props() {
 
-
     return [
       new Form({
         id: "page-compose",
@@ -60,11 +69,11 @@ module.exports = class ComposePage extends StaticPage {
           html: "Compose",
           href: "/me/contacts"
         }), {
-          your_name: new Control(c.text("name"), false),
-          your_email: new Control(c.email("email"), false),
-          your_message: new Control(c.textarea("message"), false),
-          send: luri.BUTTON({ type: "submit", html: "Send" })
-        })
+            your_name: new Control(c.text("name"), false),
+            your_email: new Control(c.email("email"), false),
+            your_message: new Control(c.textarea("message"), false),
+            send: luri.BUTTON({ type: "submit", html: "Send" })
+          })
       }, validate)
     ];
   }

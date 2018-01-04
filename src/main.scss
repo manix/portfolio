@@ -85,3 +85,8 @@ html, body {
     width: 100%;
   }
 }
+
+@import "./pages/compose";
+@import "./pages/home";
+@import "./pages/more";
+@import "./components/page-table";

@@ -23,20 +23,21 @@
   },
   "homepage": "https://github.com/luri/spa-quickstart#readme",
   "dependencies": {
-    "luri-spa": "^2.3.0"
+    "css-animate": "^1.0.1",
+    "luri-spa": "^3.0.2"
   },
   "devDependencies": {
-    "cross-env": "^5.0.5",
+    "cross-env": "^5.1.3",
     "css-loader": "^0.28.7",
-    "extract-text-webpack-plugin": "^3.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^0.11.2",
     "jsdom": "^7.2.2",
     "mocha": "^3.5.3",
     "mocha-jsdom": "^1.1.0",
-    "node-sass": "^4.5.3",
+    "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
-    "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.8.2"
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
   }
 }

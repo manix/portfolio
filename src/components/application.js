@@ -1,4 +1,5 @@
 const NotFoundPage = require("../pages/not-found");
+const animate = require("css-animate").default;
 
 module.exports = class Application extends require("luri-spa").Application {
 
@@ -10,13 +11,13 @@ module.exports = class Application extends require("luri-spa").Application {
     return super.determineTitle(def) + " - " + require("../../package.json").name;
   }
 
-  render(location) {
+  navigate(location) {
     if (this.ref.children.length > 1) {
-      this.ref.firstChild.onanimationend();
-      this.ref.firstChild.onanimationend();
+      console.log("Prevented redirect.");
+      return;
     }
 
-    super.render(location);
+    return super.navigate(location);
   }
 
   renderComponent(definition, done) {
@@ -40,10 +41,9 @@ module.exports = class Application extends require("luri-spa").Application {
       animIn = "fadeIn";
     }
 
-    oldPage.onanimationend = () => {
-      oldPage.onanimationend = null;
-      oldPage.classList.remove("animated", animOut);
-
+    animate(oldPage, animOut);
+    animate(newPage, animIn).then(() => {
+      
       this.ref.removeChild(oldPage);
 
       try {
@@ -53,14 +53,7 @@ module.exports = class Application extends require("luri-spa").Application {
       }
 
       done();
-    };
-    oldPage.classList.add("animated", animOut);
-
-    newPage.onanimationend = () => {
-      newPage.onanimationend = null;
-      newPage.classList.remove("animated", animIn);
-    }
-    newPage.classList.add("animated", animIn);
+    });
     this.ref.appendChild(newPage);
   }
 }

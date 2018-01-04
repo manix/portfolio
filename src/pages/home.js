@@ -1,4 +1,3 @@
-require("./home.scss");
 const { Anchor } = require("luri-spa");
 
 module.exports = class HomePage extends require("luri-spa").StaticPage {
@@ -11,8 +10,8 @@ module.exports = class HomePage extends require("luri-spa").StaticPage {
     return {
       id: "page-home",
       html: [
-        luri.H1("Hi."),
-        luri.H1(["I'm ", luri.STRONG("Manix"), "."]),
+        luri.SPAN("Hi."),
+        luri.SPAN(["I'm ", luri.STRONG("Manix"), "."]),
         luri.P("I program stuff."),
         {
           class: "CTA",

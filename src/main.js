@@ -4,10 +4,15 @@ require("./main.scss");
 
 /* lib */
 const luri = require("luri");
-const Application = require("./lib/application");
+const Application = require("./components/application");
 
 /* Components */
-
+(function(o) {
+  luri.emit = function(...a) {
+    console.log(...a);
+    return o(...a);
+  }
+})(luri.emit);
 
 /* Pages */
 const HomePage = require("./pages/home");
