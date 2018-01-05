@@ -26,8 +26,18 @@ module.exports = class ComposePage extends StaticPage {
   constructor() {
     super();
 
+    this.on("form-xhr-ready", function(xhr, form) {
+      if (form.id === "page-compose") {
+        form.elements.send.innerHTML = "Sending..";
+        form.elements.send.disabled = true;
+      }
+    });
+
     this.on("form-xhr-response", function (xhr, form) {
       if (form.id === "page-compose") {
+        form.elements.send.innerHTML = "Send";
+        form.elements.send.disabled = false;
+
         form.elements.message.controlComponent.displayError("This form is actually for demonstration purposes only, please use an alternate channel if you need to contact me. Sorry!");
       }
     });
@@ -70,7 +80,7 @@ module.exports = class ComposePage extends StaticPage {
             your_name: new Control(c.text("name"), false),
             your_email: new Control(c.email("email"), false),
             your_message: new Control(c.textarea("message"), false),
-            send: luri.BUTTON({ type: "submit", html: "Send" })
+            send: luri.BUTTON({ type: "submit", html: "Send", name: "send" })
           })
       }, validate)
     ];
