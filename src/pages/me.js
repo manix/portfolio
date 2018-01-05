@@ -4,7 +4,7 @@ const PageTable = require("../components/page-table");
 module.exports = class MePage extends StaticPage {
 
   title() {
-    return "Me";
+    return lang.get("me");
   }
 
   animationIn(page) {
@@ -41,7 +41,7 @@ module.exports = class MePage extends StaticPage {
       id: "page-me",
       html: new PageTable(new Anchor({
         class: "title",
-        html: "Me",
+        html: t("me"),
         href: "/"
       }), {
         name: '"Maxim"',
@@ -52,12 +52,12 @@ module.exports = class MePage extends StaticPage {
         created_at: "1993-09-05 13:04:05",
         updated_at: this.formatDate(new Date),
         birth_location: "[43.858561, 25.961836]",
-        displacement_driver: '"Limbs"',
-        motivation_driver: '"Invention"',
-        life_driver: '"Logic"',
-        intolerances: '"Ignorance"',
-        education: '"Mechanical Engineering"',
-        occupation: '"Programming"',
+        displacement_driver: ['"', t("limbs"), '"'],
+        motivation_driver: ['"', t("invention"), '"'],
+        life_driver: ['"', t("logic"), '"'],
+        intolerances: ['"', t("ignorance"), '"'],
+        education: ['"', t("mechanicalEngineering"), '"'],
+        occupation: ['"', t("programming"), '"'],
         built_stuff: new Anchor({
           href: "/me/stuff",
           html: "*stuff[]"

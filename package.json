@@ -24,6 +24,7 @@
   "homepage": "https://github.com/luri/spa-quickstart#readme",
   "dependencies": {
     "css-animate": "^1.0.1",
+    "luri-model": "^1.0.4",
     "luri-spa": "^3.0.2"
   },
   "devDependencies": {

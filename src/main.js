@@ -4,9 +4,10 @@ require("./main.scss");
 
 /* lib */
 const luri = require("luri");
-const Application = require("./components/application");
 
 /* Components */
+const Application = require("./components/application");
+const lang = require("./components/lang");
 
 
 /* Pages */
@@ -31,7 +32,23 @@ let app = new Application({
 let root = luri.construct({
   id: "app-wrapper",
   html: [
-    app
+    app,
+    
+    lang.input("_lang_code", {
+      node: "select",
+      style: "padding: 10px 15px",
+      html: [
+        {
+          node: "option",
+          html: "English",
+          value: "en"
+        }, {
+          node: "option",
+          html: "Български",
+          value: "bg"
+        }
+      ]
+    })
   ]
 });
 

@@ -1,0 +1,28 @@
+{
+  "en": {
+    "hi": "Hi",
+    "im": "I'm",
+    "iprogram": "I program stuff",
+    "learnMore": "Learn more",
+    "me": "Me",
+    "limbs": "Limbs",
+    "invention": "Invention",
+    "logic": "Logic",
+    "ignorance": "Ignorance",
+    "mechanicalEngineering": "Mechanical Engineering",
+    "programming": "Programming"
+  },
+  "bg": {
+    "hi": "Здрасти",
+    "im": "Аз съм",
+    "iprogram": "Програмирам неща",
+    "learnMore": "Научи повече",
+    "me": "Аз",
+    "limbs": "Крайници",
+    "invention": "Изобретяване",
+    "logic": "Логика",
+    "ignorance": "Невежество",
+    "mechanicalEngineering": "Машинно Инженерство",
+    "programming": "Програмиране"
+  }
+}

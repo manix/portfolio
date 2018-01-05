@@ -10,16 +10,18 @@ module.exports = class HomePage extends require("luri-spa").StaticPage {
     return {
       id: "page-home",
       html: [
-        luri.SPAN("Hi."),
-        luri.SPAN(["I'm ", luri.STRONG("Manix"), "."]),
-        luri.P("I program stuff."),
+        t("hi"), ".",
+        luri.SPAN([
+          t("im"), " ", luri.STRONG("Manix"), "."
+        ]),
+        t("iprogram", { node: "p" }),
         {
           class: "CTA",
           html: [
             new Anchor({
               class: "animated infinite",
               href: "/me",
-              html: "Learn more"
+              html: t("learnMore")
             })
           ]
         }

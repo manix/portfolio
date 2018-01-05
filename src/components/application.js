@@ -43,7 +43,7 @@ module.exports = class Application extends require("luri-spa").Application {
 
     animate(oldPage, animOut);
     animate(newPage, animIn).then(() => {
-      
+
       this.ref.removeChild(oldPage);
 
       try {
@@ -54,6 +54,10 @@ module.exports = class Application extends require("luri-spa").Application {
 
       done();
     });
+    
     this.ref.appendChild(newPage);
+
+    // TODO cache which language the page has used and only sync if it has changed
+    lang.sync();
   }
 }
